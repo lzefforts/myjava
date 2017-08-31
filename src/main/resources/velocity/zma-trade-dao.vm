@@ -1,0 +1,12 @@
+${packagePath}
+#foreach(${method} in ${methods})
+import ${method.typePath};
+#end
+public interface ${classNameUpper}Dao{
+
+    #foreach($method in $methods)
+        ${method.returnType} ${method.Name};
+    #end
+
+    
+}

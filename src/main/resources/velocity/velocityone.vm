@@ -1,0 +1,9 @@
+#set($domain="http://www.zifangsky.cn")
+whoami: $name
+
+today is $date.
+#foreach($i in $list)
+    $i
+#end
+
+website:$domain

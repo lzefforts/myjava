@@ -1,0 +1,14 @@
+
+public class ${classNameUpCase}Test{
+    @Autowired
+    private ${classNameUpCase} ${classNameLowCase};
+
+    #foreach($method in $methods)
+        @Test
+        public void ${method}Test{
+            ${classNameLowCase}.${method}();
+        }
+    #end
+
+
+}

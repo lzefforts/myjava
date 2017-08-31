@@ -1,0 +1,10 @@
+
+
+public interface ${className}{
+
+    #foreach($method in $methods)
+        ${returnType} ${method};
+    #end
+
+
+}
