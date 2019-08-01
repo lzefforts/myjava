@@ -19,9 +19,9 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 	
-	<aop:config>
-		<aop:pointcut id="trade-pointcut" expression="execution(* org.study..*ServiceImpl.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="trade-pointcut" />
-	</aop:config>
+	<!--<aop:config>-->
+		<!--<aop:pointcut id="trade-pointcut" expression="execution(* org.study..*ServiceImpl.*(..))" />-->
+		<!--<aop:advisor advice-ref="txAdvice" pointcut-ref="trade-pointcut" />-->
+	<!--</aop:config>-->
 
 </beans>
