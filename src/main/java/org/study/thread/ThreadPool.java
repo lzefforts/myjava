@@ -32,6 +32,7 @@ public class ThreadPool {
                     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
                         try {
                             executor.getQueue().put(r);
+                            System.out.println("线程放入等待队列中等待!");
                         } catch (InterruptedException e) {
 
                         }

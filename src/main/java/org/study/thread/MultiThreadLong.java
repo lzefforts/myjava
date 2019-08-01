@@ -40,21 +40,21 @@ public class MultiThreadLong {
     }
 
     public static void main(String[] args) {
-//        new Thread(new ChangeT(111L)).start();
-//        new Thread(new ChangeT(-999L)).start();
-//        new Thread(new ChangeT(333L)).start();
-//        new Thread(new ChangeT(-444L)).start();
-//        new Thread(new ReadT()).start();
-        Date nowTime = new Date();
-        DateFormat dateFormat = DateFormat.getTimeInstance();
-        //当前时间字符串,xx:xx:xx格式
-        String nowTimeFormatTempStr = dateFormat.format(nowTime);
-        //取出小时
-        String nowTimeHourStr = nowTimeFormatTempStr.split(":")[0];
-        int nowTimeHourEnd = Integer.valueOf(nowTimeHourStr).intValue();
-        //默认往前推1小时
-        int nowTimeHourStart = nowTimeHourEnd-1;
-        System.out.println(nowTimeHourEnd+","+nowTimeHourStart);
+        new Thread(new ChangeT(111L)).start();
+        new Thread(new ChangeT(-999L)).start();
+        new Thread(new ChangeT(333L)).start();
+        new Thread(new ChangeT(-444L)).start();
+        new Thread(new ReadT()).start();
+//        Date nowTime = new Date();
+//        DateFormat dateFormat = DateFormat.getTimeInstance();
+//        //当前时间字符串,xx:xx:xx格式
+//        String nowTimeFormatTempStr = dateFormat.format(nowTime);
+//        //取出小时
+//        String nowTimeHourStr = nowTimeFormatTempStr.split(":")[0];
+//        int nowTimeHourEnd = Integer.valueOf(nowTimeHourStr).intValue();
+//        //默认往前推1小时
+//        int nowTimeHourStart = nowTimeHourEnd-1;
+//        System.out.println(nowTimeHourEnd+","+nowTimeHourStart);
     }
 
 }

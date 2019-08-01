@@ -10,13 +10,113 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <guice.version>4.1.0</guice.version>
         <jcip.version>1.0</jcip.version>
         <spring.version>4.2.7.RELEASE</spring.version>
         <verlocity.version>1.7</verlocity.version>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
     </properties>
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>reflectasm</artifactId>
+            <version>1.11.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+            <version>1.2.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>sourceforge.hibernate.validator</artifactId>-->
+            <!--<version>4.0.2.GA</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>java.validation.api</artifactId>-->
+            <!--<version>1.0.0.GA</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>org.slf4j.slf4j-api</artifactId>-->
+            <!--<version>1.5.6</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>org.slf4j.slf4j-log4j12</artifactId>-->
+            <!--<version>1.5.6</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>jakarta.log4j</artifactId>-->
+            <!--<version>1.2.16</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.external</groupId>-->
+            <!--<artifactId>sourceforge.spring</artifactId>-->
+            <!--<version>2.5.6</version>-->
+        <!--</dependency>-->
+
+
+
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+
 
         <!--<dependency>-->
             <!--<groupId>com.github</groupId>-->
@@ -108,7 +208,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>19.0</version>
+            <version>27.0.1-jre</version>
         </dependency>
 
 
@@ -147,12 +247,6 @@
             <groupId>com.ibeetl</groupId>
             <artifactId>beetlsql</artifactId>
             <version>2.8.15</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.creditease.zma</groupId>
-            <artifactId>zma-rpc</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -244,6 +338,206 @@
             <artifactId>spring-jms</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+
+        <!--fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
+        </dependency>
+
+        <!--httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.5</version>
+        </dependency>
+
+        <!--mongodb -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+
+        <!--gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+
+        <!-- aspectj -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+
+        <!-- collections -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <!-- kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.12</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <!-- guice -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+
+        <!-- 添加百度uid-generator -->
+        <!--<dependency>-->
+            <!--<groupId>com.baidu.fsg</groupId>-->
+            <!--<artifactId>uid-generator</artifactId>-->
+            <!--<version>1.0.0-SNAPSHOT</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>ch.qos.logback</groupId>-->
+                    <!--<artifactId>logback-classic</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+
+        <!-- 添加58金融id-generator -->
+        <!--<dependency>-->
+            <!--<groupId>com.bj58.fbu.loan.car</groupId>-->
+            <!--<artifactId>id-generator</artifactId>-->
+            <!--<version>1.0.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+
+        <!-- javassist -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.23.1-GA</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.oval</groupId>
+            <artifactId>oval</artifactId>
+            <version>1.81</version>
+        </dependency>
+
+        <!--
+            JCache is the Java caching API. It was defined by JSR107.
+            It defines a standard Java Caching API for use by developers
+            and a standard SPI ("Service Provider Interface") for use by implementers.
+         -->
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- json schema -->
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.google.auto.service</groupId>-->
+            <!--<artifactId>auto-service</artifactId>-->
+            <!--<version>1.0-rc4</version>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.netflix.zuul</groupId>
+            <artifactId>zuul-core</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+        <!-- rocketmq -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+
+        <!-- jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!-- json schema -->
+        <dependency>
+            <groupId>org.jsonschema2pojo</groupId>
+            <artifactId>jsonschema2pojo-core</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>1.19</version>
+            <scope>provided</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -252,11 +546,69 @@
                 <!-- 编译插件 -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.5.1</version> <!-- or newer version -->
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source> <!-- depending on your project -->
+                    <target>1.8</target> <!-- depending on your project -->
+<!--                    <annotationProcessorPaths>-->
+<!--                        <path>-->
+<!--                            <groupId>org.mapstruct</groupId>-->
+<!--                            <artifactId>mapstruct-processor</artifactId>-->
+<!--                            <version>${org.mapstruct.version}</version>-->
+<!--                        </path>-->
+<!--                        &lt;!&ndash; other annotation processors &ndash;&gt;-->
+<!--                    </annotationProcessorPaths>-->
                 </configuration>
+            </plugin>
+            <plugin>
+                <!-- 编译插件 -->
+                <groupId>com.arnold.maven.plugins-custom</groupId>
+                <artifactId>58daohelper-generator</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <goals>
+                    <goal>
+                        makeIt
+                    </goal>
+                </goals>
+            </plugin>
+
+            <!--<plugin>-->
+                <!--<groupId>org.jsonschema2pojo</groupId>-->
+                <!--<artifactId>jsonschema2pojo-maven-plugin</artifactId>-->
+                <!--<version>1.0.1</version>-->
+                <!--<configuration>-->
+                    <!--<sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>-->
+                    <!--<targetPackage>com.example.types</targetPackage>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>generate</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+
+            <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-shade-plugin</artifactId>
+                     <executions>
+                         <execution>
+                             <phase>package</phase>
+                             <goals>
+                                 <goal>shade</goal>
+                             </goals>
+                             <configuration>
+                                 <finalName>microbenchmarks</finalName>
+                                 <transformers>
+                                     <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                         <mainClass>org.openjdk.jmh.Main</mainClass>
+                                     </transformer>
+                                 </transformers>
+                             </configuration>
+                         </execution>
+                     </executions>
             </plugin>
         </plugins>
     </build>

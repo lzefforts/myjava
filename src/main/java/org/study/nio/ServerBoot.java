@@ -1,0 +1,14 @@
+package org.study.nio;
+
+/**
+ * Created by ArnoldLee on 18/9/11.
+ */
+public class ServerBoot {
+
+    private static final int PORT = 8000;
+
+    public static void main(String[] args) {
+        Server server = new Server(PORT);
+        server.start();
+    }
+}

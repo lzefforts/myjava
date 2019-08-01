@@ -12,14 +12,29 @@ import java.lang.reflect.Method;
 public class EnhancerDemo extends AbstractEnhanceDemo{
     public static void main(String[] args) {
         Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(EnhancerDemo.class);
-        enhancer.setCallback(new MethodInterceptorImpl());
+//        enhancer.setSuperclass(EnhancerDemo.class);
+//        enhancer.setCallback(new MethodInterceptorImpl());
+//
+//        EnhancerDemo demo = (EnhancerDemo)enhancer.create();
+//        demo.test();
+//        demo.abMethod();
+//        demo.firstMethod();
+//        System.out.println(demo);
 
-        EnhancerDemo demo = (EnhancerDemo)enhancer.create();
-        demo.test();
-        demo.abMethod();
-        demo.firstMethod();
-        System.out.println(demo);
+//        enhancer.setSuperclass(FatherClass.class);
+//        enhancer.setCallback(new MethodInterceptorImpl());
+//        FatherClass proxyBean = (FatherClass)enhancer.create();
+//        proxyBean.display();
+//
+//        FatherClass proxyBean2 = (FatherClass)enhancer.create();
+//        FatherClass proxyBean3 = (FatherClass)enhancer.create();
+//        System.out.println(proxyBean.toString());
+//        System.out.println(proxyBean2.toString());
+//        System.out.println(proxyBean3.toString());
+
+        FatherClass proxyBean = (FatherClass)new CglibUtil().createProxy(FatherClass.class);
+        proxyBean.display();
+
     }
 
     public void test(){

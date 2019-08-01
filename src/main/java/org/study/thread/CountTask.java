@@ -1,10 +1,13 @@
 package org.study.thread;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.*;
 
 /**
- * Created by ArnoldLee on 17/11/30.
+ * folk/join框架
+ * @author ArnoldLee
+ * @date 17/11/30
  */
 public class CountTask extends RecursiveTask<Long> {
     private static final int THRESHOLD = 10000;
@@ -49,10 +52,12 @@ public class CountTask extends RecursiveTask<Long> {
     public static void main(String[] args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         CountTask task = new CountTask(0,200000L);
+        Date startDate = new Date();
         ForkJoinTask<Long> result = forkJoinPool.submit(task);
         try {
             long res = result.get();
             System.out.println("sum="+res);
+            System.out.println("time:"+(System.currentTimeMillis()-startDate.getTime()));
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

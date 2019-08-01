@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<report name='超时未匹配流水'>
+	<report-header>
+		<column name='募集户' mapping='accNo'/>
+		<column name='流水号' mapping='transId'/>
+		<column name='借贷标识' mapping='direction'/>
+		<column name='币种' mapping='currency'/>
+		<column name='流水金额' mapping='amount'/>
+		<column name='付款人姓名' mapping='tarBankAccName'/>
+		<column name='付款账号' mapping='tarBankAccno'/>
+		<column name='流水时间' mapping='transTime' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>
+		<column name='创建日期' mapping='createTime' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>
+		<column name='状态' mapping='state'/>
+		<column name='二级产品名称' mapping='fundName'/>
+	</report-header>
+</report>

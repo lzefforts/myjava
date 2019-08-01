@@ -35,6 +35,8 @@ public class CountDownLatchDemo implements Runnable {
         }
 
         System.out.println("waiting....");
+//        Long count = end.getCount();
+//        System.out.println("count:"+count);
         //等待检查,主线程等待10个线程完成任务
         end.await();
         //发射火箭

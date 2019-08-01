@@ -14,9 +14,9 @@ public class Producer {
     public static void main(String[] args) throws Exception{
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
-//        factory.setPort(5672);
-//        factory.setUsername("guest");
-//        factory.setPassword("guest");
+        factory.setPort(5672);
+        factory.setUsername("guest");
+        factory.setPassword("guest");
 
         Connection connection = factory.newConnection();
 
